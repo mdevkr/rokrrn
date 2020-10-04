@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="rokrrn.js">
+    </script>
+  </head>
+  <body>
+    <input type="text" id="txtYYMMDD" maxlength="6" onkeypress="digitOnly();"/>
+    <input type="checkbox" id="chkSex"/>
+    <label for="chkSex">남성</label>
+    <button onClick="getRRN();">발급</button>
+    <label id="lblRRN"/>
+  </body>
+
+  <script type="text/javascript">
+  function digitOnly(){
+    if((event.keyCode<48)||(event.keyCode>57))
+      event.returnValue=false;
+  }
+  function getRRN() {
+    document.getElementById('lblRRN').innerText = newRRN(document.getElementById('txtYYMMDD').value, document.getElementById('chkSex').checked);
+  }
+  </script>
+</html>
